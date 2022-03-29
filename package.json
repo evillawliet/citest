@@ -1,0 +1,43 @@
+{
+  "name": "citest",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "",
+  "keywords": [],
+  "author": "lawliet",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint \"{src,test}/**/*.ts\"",
+    "start": "esno src/index.ts",
+    "test": "npx vite-node src/cli.ts"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.18.9",
+    "eslint": "^8.12.0",
+    "esno": "^0.14.1",
+    "unbuild": "^0.7.2"
+  },
+  "dependencies": {
+    "@antfu/ni": "^0.14.0",
+    "@types/chai": "^4.3.0",
+    "chai": "^4.3.6",
+    "fast-glob": "^3.2.11",
+    "picocolors": "^1.0.0",
+    "vite-node": "^0.7.13"
+  }
+}
